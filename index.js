@@ -9,7 +9,7 @@ module.exports = function (stylecow) {
 					name: 'custom-media'
 				})
 				.forEach(function (customMedia) {
-					root.setData(customMedia.get('ExtensionName').name, customMedia.get('MediaQueries'));
+					root.setData('@custom-media-' + customMedia.get('ExtensionName').name, customMedia.get('MediaQueries'));
 					customMedia.detach();
 				});
 		}
@@ -25,7 +25,7 @@ module.exports = function (stylecow) {
 			media
 				.getAll('ExtensionName')
 				.forEach(function (extension) {
-					var mediaqueries = extension.getData(extension.name);
+					var mediaqueries = extension.getData('@custom-media-' + extension.name);
 
 					if (mediaqueries) {
 						extension.getParent('ConditionalExpression').replaceWith(mediaqueries.clone());
