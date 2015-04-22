@@ -12,39 +12,11 @@
               "class": "MediaQuery",
               "children": [
                 {
-                  "class": "MediaQueries",
+                  "class": "ConditionalExpression",
                   "children": [
                     {
-                      "class": "MediaQuery",
-                      "children": [
-                        {
-                          "class": "ConditionalExpression",
-                          "children": [
-                            {
-                              "class": "ConditionalFeature",
-                              "name": "max-width",
-                              "vendor": null,
-                              "children": [
-                                {
-                                  "class": "Value",
-                                  "children": [
-                                    {
-                                      "class": "Unit",
-                                      "name": "em",
-                                      "children": [
-                                        {
-                                          "class": "Number",
-                                          "name": 30
-                                        }
-                                      ]
-                                    }
-                                  ]
-                                }
-                              ]
-                            }
-                          ]
-                        }
-                      ]
+                      "class": "ExtensionName",
+                      "name": "viewport-max-s"
                     }
                   ]
                 }

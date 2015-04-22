@@ -2,16 +2,15 @@ module.exports = function (stylecow) {
 
 	//Save all custom-media in the root
 	stylecow.addTask({
-		fn: function (root) {
-			root.
-				getAll({
-					type: 'AtRule',
-					name: 'custom-media'
-				})
-				.forEach(function (customMedia) {
-					root.setData('@custom-media-' + customMedia.get('ExtensionName').name, customMedia.get('MediaQueries'));
-					customMedia.detach();
-				});
+		filter: {
+			type: 'AtRule',
+			name: 'custom-media'
+		},
+		fn: function (customMedia) {
+			var root = customMedia.getParent('Root');
+
+			root.setData('@custom-media-' + customMedia.get('ExtensionName').name, customMedia.get('MediaQueries'));
+			customMedia.detach();
 		}
 	});
 
