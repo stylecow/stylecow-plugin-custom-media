@@ -1,0 +1,104 @@
+{
+  "class": "Root",
+  "children": [
+    {
+      "class": "Media",
+      "name": "media",
+      "children": [
+        {
+          "class": "MediaQueries",
+          "children": [
+            {
+              "class": "MediaQuery",
+              "children": [
+                {
+                  "class": "MediaQueries",
+                  "children": [
+                    {
+                      "class": "MediaQuery",
+                      "children": [
+                        {
+                          "class": "ConditionalExpression",
+                          "children": [
+                            {
+                              "class": "ConditionalFeature",
+                              "name": "max-width",
+                              "vendor": null,
+                              "children": [
+                                {
+                                  "class": "Value",
+                                  "children": [
+                                    {
+                                      "class": "Unit",
+                                      "name": "em",
+                                      "children": [
+                                        {
+                                          "class": "Number",
+                                          "name": 30
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "class": "Block",
+          "children": [
+            {
+              "class": "Rule",
+              "children": [
+                {
+                  "class": "Selectors",
+                  "children": [
+                    {
+                      "class": "Selector",
+                      "children": [
+                        {
+                          "class": "TypeSelector",
+                          "name": "body"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "class": "Block",
+                  "children": [
+                    {
+                      "class": "Declaration",
+                      "name": "color",
+                      "vendor": null,
+                      "children": [
+                        {
+                          "class": "Value",
+                          "children": [
+                            {
+                              "class": "Keyword",
+                              "name": "blue",
+                              "vendor": null
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+@custom-media --a (min-width: 100px);
+@custom-media --b (max-width: 1000px);
+
+@media (--a), (--b) {
+  body {
+    color: red;
+  }
+}
