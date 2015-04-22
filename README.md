@@ -24,4 +24,4 @@ And stylecow converts to:
 }
 ```
 
-More demos in [the tests folder](https://github.com/stylecow/stylecow-plugin-custom-media/tree/master/tests)
+More demos in [the tests folder](https://github.com/stylecow/stylecow-plugin-custom-media/tree/master/tests/cases)
