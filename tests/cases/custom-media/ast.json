@@ -12,33 +12,23 @@
               "class": "MediaQuery",
               "children": [
                 {
-                  "class": "MediaQueries",
+                  "class": "ConditionalExpression",
                   "children": [
                     {
-                      "class": "MediaQuery",
+                      "class": "ConditionalFeature",
+                      "name": "max-width",
+                      "vendor": null,
                       "children": [
                         {
-                          "class": "ConditionalExpression",
+                          "class": "Value",
                           "children": [
                             {
-                              "class": "ConditionalFeature",
-                              "name": "max-width",
-                              "vendor": null,
+                              "class": "Unit",
+                              "name": "em",
                               "children": [
                                 {
-                                  "class": "Value",
-                                  "children": [
-                                    {
-                                      "class": "Unit",
-                                      "name": "em",
-                                      "children": [
-                                        {
-                                          "class": "Number",
-                                          "name": 30
-                                        }
-                                      ]
-                                    }
-                                  ]
+                                  "class": "Number",
+                                  "name": 30
                                 }
                               ]
                             }

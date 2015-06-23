@@ -1,15 +1,23 @@
 module.exports = function (stylecow) {
 
-	//Save all custom-media in the root
+	var allCustomMedia = {};
+
+	//Reset customMedia variable
+	stylecow.addTask({
+		position: 'before',
+		fn: function (root) {
+			allCustomMedia = {};
+		}
+	});
+
+	//Save all custom-media
 	stylecow.addTask({
 		filter: {
 			type: 'AtRule',
 			name: 'custom-media'
 		},
 		fn: function (customMedia) {
-			var root = customMedia.getParent('Root');
-
-			root.setData('@custom-media-' + customMedia.get('ExtensionName').name, customMedia.get('MediaQueries'));
+			allCustomMedia[customMedia.get('ExtensionName').name] = customMedia.get('MediaQuery');
 			customMedia.detach();
 		}
 	});
@@ -24,10 +32,17 @@ module.exports = function (stylecow) {
 			media
 				.getAll('ExtensionName')
 				.forEach(function (extension) {
-					var mediaqueries = extension.getData('@custom-media-' + extension.name);
+					var mediaquery = allCustomMedia[extension.name];
 
-					if (mediaqueries) {
-						extension.getParent('ConditionalExpression').replaceWith(mediaqueries.clone());
+					if (mediaquery) {
+						var expression = extension.getParent('ConditionalExpression');
+
+						mediaquery.forEach(function (child) {
+							expression.before(child.clone());
+						});
+
+						expression.detach();
+						//extension.getParent('ConditionalExpression').replaceWith(mediaqueries.clone());
 					}
 				});
 		}

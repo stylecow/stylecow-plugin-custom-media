@@ -16,38 +16,6 @@
                   "children": [
                     {
                       "class": "ConditionalFeature",
-                      "name": "min-width",
-                      "vendor": null,
-                      "children": [
-                        {
-                          "class": "Value",
-                          "children": [
-                            {
-                              "class": "Unit",
-                              "name": "px",
-                              "children": [
-                                {
-                                  "class": "Number",
-                                  "name": 100
-                                }
-                              ]
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "class": "MediaQuery",
-              "children": [
-                {
-                  "class": "ConditionalExpression",
-                  "children": [
-                    {
-                      "class": "ConditionalFeature",
                       "name": "max-width",
                       "vendor": null,
                       "children": [
@@ -56,11 +24,11 @@
                           "children": [
                             {
                               "class": "Unit",
-                              "name": "px",
+                              "name": "em",
                               "children": [
                                 {
                                   "class": "Number",
-                                  "name": 1000
+                                  "name": 30
                                 }
                               ]
                             }
@@ -78,45 +46,74 @@
           "class": "Block",
           "children": [
             {
-              "class": "Rule",
+              "class": "Comment",
+              "name": " narrow window styles "
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "class": "Media",
+      "name": "media",
+      "children": [
+        {
+          "class": "MediaQueries",
+          "children": [
+            {
+              "class": "MediaQuery",
               "children": [
                 {
-                  "class": "Selectors",
+                  "class": "ConditionalExpression",
                   "children": [
                     {
-                      "class": "Selector",
-                      "children": [
-                        {
-                          "class": "TypeSelector",
-                          "name": "body"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "class": "Block",
-                  "children": [
-                    {
-                      "class": "Declaration",
-                      "name": "color",
+                      "class": "ConditionalFeature",
+                      "name": "max-width",
                       "vendor": null,
                       "children": [
                         {
                           "class": "Value",
                           "children": [
                             {
-                              "class": "Keyword",
-                              "name": "red",
-                              "vendor": null
+                              "class": "Unit",
+                              "name": "em",
+                              "children": [
+                                {
+                                  "class": "Number",
+                                  "name": 30
+                                }
+                              ]
                             }
                           ]
                         }
                       ]
                     }
                   ]
+                },
+                {
+                  "class": "Keyword",
+                  "name": "and",
+                  "vendor": null
+                },
+                {
+                  "class": "ConditionalExpression",
+                  "children": [
+                    {
+                      "class": "ConditionalFeatureBoolean",
+                      "name": "script"
+                    }
+                  ]
                 }
               ]
+            }
+          ]
+        },
+        {
+          "class": "Block",
+          "children": [
+            {
+              "class": "Comment",
+              "name": " special styles for when script is allowed "
             }
           ]
         }
