@@ -1,3 +1,5 @@
+"use strict";
+
 module.exports = function (stylecow) {
 
 	var allCustomMedia = {};
@@ -29,22 +31,20 @@ module.exports = function (stylecow) {
 			name: 'media'
 		},
 		fn: function (media) {
-			media
-				.getAll('ExtensionName')
-				.forEach(function (extension) {
-					var mediaquery = allCustomMedia[extension.name];
+			media.walk('ExtensionName', function (extension) {
+				var mediaquery = allCustomMedia[extension.name];
 
-					if (mediaquery) {
-						var expression = extension.getParent('ConditionalExpression');
+				if (mediaquery) {
+					let expression = extension.getParent('ConditionalExpression');
 
-						mediaquery.forEach(function (child) {
-							expression.before(child.clone());
-						});
+					mediaquery.forEach(function (child) {
+						expression.before(child.clone());
+					});
 
-						expression.detach();
-						//extension.getParent('ConditionalExpression').replaceWith(mediaqueries.clone());
-					}
-				});
+					expression.detach();
+					//extension.getParent('ConditionalExpression').replaceWith(mediaqueries.clone());
+				}
+			});
 		}
 	});
 };

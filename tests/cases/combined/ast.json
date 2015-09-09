@@ -1,33 +1,33 @@
 {
-  "class": "Root",
+  "type": "Root",
   "children": [
     {
-      "class": "Media",
+      "type": "AtRule",
       "name": "media",
       "children": [
         {
-          "class": "MediaQueries",
+          "type": "MediaQueries",
           "children": [
             {
-              "class": "MediaQuery",
+              "type": "MediaQuery",
               "children": [
                 {
-                  "class": "ConditionalExpression",
+                  "type": "ConditionalExpression",
                   "children": [
                     {
-                      "class": "ConditionalFeature",
+                      "type": "ConditionalFeature",
                       "name": "max-width",
                       "vendor": null,
                       "children": [
                         {
-                          "class": "Value",
+                          "type": "Value",
                           "children": [
                             {
-                              "class": "Unit",
+                              "type": "Unit",
                               "name": "em",
                               "children": [
                                 {
-                                  "class": "Number",
+                                  "type": "Number",
                                   "name": 30
                                 }
                               ]
@@ -43,10 +43,10 @@
           ]
         },
         {
-          "class": "Block",
+          "type": "Block",
           "children": [
             {
-              "class": "Comment",
+              "type": "Comment",
               "name": " narrow window styles "
             }
           ]
@@ -54,32 +54,32 @@
       ]
     },
     {
-      "class": "Media",
+      "type": "AtRule",
       "name": "media",
       "children": [
         {
-          "class": "MediaQueries",
+          "type": "MediaQueries",
           "children": [
             {
-              "class": "MediaQuery",
+              "type": "MediaQuery",
               "children": [
                 {
-                  "class": "ConditionalExpression",
+                  "type": "ConditionalExpression",
                   "children": [
                     {
-                      "class": "ConditionalFeature",
+                      "type": "ConditionalFeature",
                       "name": "max-width",
                       "vendor": null,
                       "children": [
                         {
-                          "class": "Value",
+                          "type": "Value",
                           "children": [
                             {
-                              "class": "Unit",
+                              "type": "Unit",
                               "name": "em",
                               "children": [
                                 {
-                                  "class": "Number",
+                                  "type": "Number",
                                   "name": 30
                                 }
                               ]
@@ -91,15 +91,15 @@
                   ]
                 },
                 {
-                  "class": "Keyword",
+                  "type": "Keyword",
                   "name": "and",
                   "vendor": null
                 },
                 {
-                  "class": "ConditionalExpression",
+                  "type": "ConditionalExpression",
                   "children": [
                     {
-                      "class": "ConditionalFeatureBoolean",
+                      "type": "ConditionalFeatureBoolean",
                       "name": "script"
                     }
                   ]
@@ -109,10 +109,10 @@
           ]
         },
         {
-          "class": "Block",
+          "type": "Block",
           "children": [
             {
-              "class": "Comment",
+              "type": "Comment",
               "name": " special styles for when script is allowed "
             }
           ]
