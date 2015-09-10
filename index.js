@@ -1,11 +1,11 @@
 "use strict";
 
-module.exports = function (stylecow) {
+module.exports = function (tasks) {
 
 	var allCustomMedia = {};
 
 	//Reset customMedia variable
-	stylecow.addTask({
+	tasks.addTask({
 		position: 'before',
 		fn: function (root) {
 			allCustomMedia = {};
@@ -13,7 +13,7 @@ module.exports = function (stylecow) {
 	});
 
 	//Save all custom-media
-	stylecow.addTask({
+	tasks.addTask({
 		filter: {
 			type: 'AtRule',
 			name: 'custom-media'
@@ -25,7 +25,7 @@ module.exports = function (stylecow) {
 	});
 
 	//Replace the custom-media
-	stylecow.addTask({
+	tasks.addTask({
 		filter: {
 			type: 'AtRule',
 			name: 'media'
@@ -37,10 +37,7 @@ module.exports = function (stylecow) {
 				if (mediaquery) {
 					let expression = extension.getParent('ConditionalExpression');
 
-					mediaquery.forEach(function (child) {
-						expression.before(child.clone());
-					});
-
+					mediaquery.forEach(child => expression.before(child.clone()));
 					expression.detach();
 					//extension.getParent('ConditionalExpression').replaceWith(mediaqueries.clone());
 				}
