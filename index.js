@@ -31,17 +31,19 @@ module.exports = function (tasks) {
             name: 'media'
         },
         fn: function (media) {
-            media.walk('ExtensionName', function (extension) {
-                var mediaquery = allCustomMedia[extension.name];
+            media
+                .getAll('ExtensionName')
+                .forEach(function (extension) {
+                    var mediaquery = allCustomMedia[extension.name];
 
-                if (mediaquery) {
-                    let expression = extension.getParent('ConditionalExpression');
+                    if (mediaquery) {
+                        let expression = extension.getParent('ConditionalExpression');
 
-                    mediaquery.forEach(child => expression.before(child.clone()));
-                    expression.detach();
-                    //extension.getParent('ConditionalExpression').replaceWith(mediaqueries.clone());
-                }
-            });
+                        mediaquery.forEach(child => expression.before(child.clone()));
+                        expression.detach();
+                        //extension.getParent('ConditionalExpression').replaceWith(mediaqueries.clone());
+                    }
+                });
         }
     });
 };
